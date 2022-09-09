@@ -62,6 +62,18 @@ function linkAction() {
 }
 navLink.forEach((n) => n.addEventListener("click", linkAction));
 
+// SKILLS
+const skillContent = document.querySelectorAll(".skill");
+const skillHeader = document.querySelectorAll(".skills_header");
+const skillContentArr = Array.from(skillContent);
+const skillHeaderArr = Array.from(skillHeader);
+
+skillHeaderArr.forEach((element, idx) => {
+  element.addEventListener("click", function () {
+    skillContentArr[idx].classList.toggle("skills_open");
+  });
+});
+
 // QUALIFICATION TABS
 let education = document.getElementById("education");
 let work = document.getElementById("work");
