@@ -397,6 +397,89 @@ button {
   justify-content: center;
 }
 
+/* SKILLS  */
+.skills_container {
+  row-gap: 0;
+}
+
+.skills_header {
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--mb-2-5);
+  cursor: pointer;
+}
+
+.skills_icon,
+.skills_arrow {
+  font-size: 2rem;
+  font-weight: bolder;
+  color: var(--first-color);
+}
+
+.skills_icon {
+  margin-right: var(--mb-0-75);
+}
+
+.skills_title {
+  font-size: var(--h3-font-size);
+}
+
+.skills_subtitle {
+  font-size: var(--small-font-size);
+  color: var(--text-color-light);
+}
+
+.skills_arrow {
+  margin-left: auto;
+  transition: 0.4s;
+}
+
+.skills_list {
+  row-gap: 1.5rem;
+  padding-left: 2.7rem;
+}
+
+.skills_titles {
+  display: flex;
+  justify-content: space-between;
+  /* margin-bottom: var(--mb-0-5); */
+}
+
+.skills_name {
+  font-size: var(--normal-font-size);
+  font-weight: var(--font-medium);
+}
+
+.single_skill_icon {
+  color: var(--first-color);
+  font-size: var(--h1-font-size);
+}
+
+.external-logo {
+  width: var(--h1-font-size);
+}
+
+.skills_bar {
+  height: 5px;
+  border-radius: 0.25rem;
+  background-color: var(--first-color);
+}
+
+.skills_list {
+  height: 0;
+  overflow: hidden;
+}
+
+.skills_open .skills_list {
+  height: max-content;
+  margin-bottom: var(--mb-2-5);
+  transition: 0.3s;
+}
+
+.skills_open .skills_arrow {
+  transform: rotate(-180deg);
+}
+
 /* QUALIFICATION */
 .qualification_tabs {
   display: flex;
@@ -940,15 +1023,15 @@ button {
   }
   1.1395%,
   26.2093% {
-    content: "Web";
+    content: "W";
   }
   2.2791%,
   25.0698% {
-    content: "Web Dev";
+    content: "We";
   }
   3.4186%,
   23.9302% {
-    content: "Web Developer";
+    content: "Web";
   }
 
   30.7674%,
@@ -957,31 +1040,31 @@ button {
   }
   31.9070%,
   50.1395% {
-    content: "Pro";
+    content: "A";
   }
   33.0465%,
   49.0000% {
-    content: "Profess";
+    content: "An";
   }
   34.1860%,
   47.8605% {
-    content: "Professional";
+    content: "And";
   }
   35.3256%,
   46.7209% {
-    content: "Professional Ph";
+    content: "Andr";
   }
   36.4651%,
   45.5814% {
-    content: "Professional Photo";
+    content: "Andro";
   }
   37.6047%,
   44.4419% {
-    content: "Professional Photo Edit";
+    content: "Androi";
   }
   38.7443%,
   43.3023% {
-    content: "Professional Photo Editor";
+    content: "Android";
   }
 
   54.6977%,
@@ -990,43 +1073,43 @@ button {
   }
   55.8372%,
   84.0698% {
-    content: "Of";
+    content: "B";
   }
   56.9767%,
   82.9302% {
-    content: "Office";
+    content: "Bl";
   }
   58.1163%,
   81.7907% {
-    content: "Office App";
+    content: "Blo";
   }
   59.2558%,
   80.6512% {
-    content: "Office Appli";
+    content: "Bloc";
   }
   60.3953%,
   79.5116% {
-    content: "Office Applica";
+    content: "Block";
   }
   61.5349%,
   78.3721% {
-    content: "Office Applicati";
+    content: "Blockc";
   }
   62.6745%,
   77.2325% {
-    content: "Office Application";
+    content: "Blockch";
   }
   63.8141%,
   76.0929% {
-    content: "Office Application Ex";
+    content: "Blockcha";
   }
   64.9537%,
   74.9533% {
-    content: "Office Application Expe";
+    content: "Blockchai";
   }
   66.0933%,
   73.8137% {
-    content: "Office Application Expert";
+    content: "Blockchain";
   }
 }
 
@@ -1071,13 +1154,13 @@ button {
   @keyframes sequencePopup {
     0%,
     100% {
-      content: "Website Developer";
+      content: "Web";
     }
     25% {
-      content: "Professional Photo Editor";
+      content: "Android";
     }
     50% {
-      content: "MS Office Expert";
+      content: "Blockchain";
     }
   }
 
