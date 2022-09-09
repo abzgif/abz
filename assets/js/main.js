@@ -23,7 +23,8 @@ async function handleSubmit(event) {
       form.reset();
     })
     .catch((error) => {
-      status.innerHTML = "Oops! There was a problem delivering your message, please contact via other means.";
+      status.innerHTML =
+        "Oops! There was a problem delivering your message, please contact via other means.";
       document.querySelector(".alert_style").style.display = "block";
 
       // hide alert after 3 seconds
@@ -33,6 +34,22 @@ async function handleSubmit(event) {
     });
 }
 form.addEventListener("submit", handleSubmit);
+
+// FORM BORDERS 
+$("#contact-form input,#contact-form textarea").on("input focusin",(e)=>{
+  $(e.target).parent().addClass("focusIn");
+  if ($(e.target).val().trim().length > 0) {
+    $(e.target).parent().addClass("valid");
+    $(e.target).parent().removeClass("invalid");
+  } else {
+    $(e.target).parent().addClass("invalid");
+    $(e.target).parent().removeClass("valid");
+  }
+});
+
+$("#contact-form input,#contact-form textarea").on("focusout",(e)=>{
+    $(e.target).parent().removeClass("focusIn");
+});
 
 // NAVIGATION PANEL
 let navMenu = document.getElementById("nav-menu"),
@@ -62,20 +79,33 @@ function linkAction() {
 }
 navLink.forEach((n) => n.addEventListener("click", linkAction));
 
+// SKILLS
+const skillContent = document.querySelectorAll(".skill");
+const skillHeader = document.querySelectorAll(".skills_header");
+const skillContentArr = Array.from(skillContent);
+const skillHeaderArr = Array.from(skillHeader);
+
+skillHeaderArr.forEach((element, idx) => {
+  element.addEventListener("click", function () {
+    skillContentArr[idx].classList.toggle("skills_open");
+  });
+});
+
 // QUALIFICATION TABS
 let education = document.getElementById("education");
 let work = document.getElementById("work");
 let educationheader = document.getElementById("educationheader");
 let workheader = document.getElementById("workheader");
-workheader.style.color = "var(--first-colour)";
+workheader.style.color = "var(--first-color)";
+educationheader.style.color = "var(--text-color)";
 
 educationheader.addEventListener("click", () => {
   let condition1 = work.classList.contains("qualification-inactive");
   if (!condition1) {
     education.classList.remove("qualification-inactive");
     work.classList.add("qualification-inactive");
-    workheader.style.color = "var(--text-colour)";
-    educationheader.style.color = "var(--first-colour)";
+    workheader.style.color = "var(--text-color)";
+    educationheader.style.color = "var(--first-color)";
   }
 });
 workheader.addEventListener("click", () => {
@@ -83,8 +113,8 @@ workheader.addEventListener("click", () => {
   if (!condition2) {
     work.classList.remove("qualification-inactive");
     education.classList.add("qualification-inactive");
-    educationheader.style.color = "var(--text-colour)";
-    workheader.style.color = "var(--first-colour)";
+    educationheader.style.color = "var(--text-color)";
+    workheader.style.color = "var(--first-color)";
   }
 });
 
@@ -177,4 +207,15 @@ themeButton.addEventListener("click", () => {
   // We save the theme and the current icon that the user chose
   localStorage.setItem("selected-theme", getCurrentTheme());
   localStorage.setItem("selected-icon", getCurrentIcon());
+});
+
+// Typing Animation using Typed JS
+var typed = new Typed(".type", {
+  strings: ["a Web", "an Android", "a Blockchain"],
+  smartBackspace: true,
+  startDelay: 1000,
+  typeSpeed: 130,
+  backDelay: 1000,
+  backSpeed: 60,
+  loop: true,
 });
